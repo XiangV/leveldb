@@ -38,8 +38,18 @@ include(CheckIncludeFile)
 check_include_file("unistd.h" HAVE_UNISTD_H)
 
 include(CheckLibraryExists)
-check_library_exists(crc32c crc32c_value "" HAVE_CRC32C)
-check_library_exists(snappy snappy_compress "" HAVE_SNAPPY)
+
+find_library(CRC32C_LIB crc32)
+find_library(SNAPPY_LIB snappy)
+
+if (CRC32_LIB)
+  set(HAVE_CRC32C)
+endif()
+
+if (SNAPPY_LIB)
+  set(HAVE_SNAPPY)
+endif()
+
 check_library_exists(zstd zstd_compress "" HAVE_ZSTD)
 check_library_exists(tcmalloc malloc "" HAVE_TCMALLOC)
 
