@@ -3,8 +3,8 @@
 // found in the LICENSE file. See the AUTHORS file for names of contributors.
 
 #include "gtest/gtest.h"
-#include "db/log_reader.h"
-#include "db/log_writer.h"
+#include "leveldb/log_reader.h"
+#include "leveldb/log_writer.h"
 #include "leveldb/env.h"
 #include "util/coding.h"
 #include "util/crc32c.h"

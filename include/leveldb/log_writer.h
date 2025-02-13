@@ -7,7 +7,7 @@
 
 #include <cstdint>
 
-#include "db/log_format.h"
+#include "leveldb/log_format.h"
 #include "leveldb/slice.h"
 #include "leveldb/status.h"
 

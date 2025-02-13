@@ -10,8 +10,8 @@
 #include <set>
 #include <string>
 
-#include "db/dbformat.h"
-#include "db/log_writer.h"
+#include "dbformat.h"
+#include "leveldb/log_writer.h"
 #include "db/snapshot.h"
 #include "leveldb/db.h"
 #include "leveldb/env.h"

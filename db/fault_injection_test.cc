@@ -12,7 +12,7 @@
 #include "gtest/gtest.h"
 #include "db/db_impl.h"
 #include "db/filename.h"
-#include "db/log_format.h"
+#include "leveldb/log_format.h"
 #include "db/version_set.h"
 #include "leveldb/cache.h"
 #include "leveldb/db.h"

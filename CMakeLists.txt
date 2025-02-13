@@ -133,11 +133,8 @@ target_sources(leveldb
     "db/dumpfile.cc"
     "db/filename.cc"
     "db/filename.h"
-    "db/log_format.h"
     "db/log_reader.cc"
-    "db/log_reader.h"
     "db/log_writer.cc"
-    "db/log_writer.h"
     "db/memtable.cc"
     "db/memtable.h"
     "db/repair.cc"
@@ -208,6 +205,9 @@ target_sources(leveldb
     "${LEVELDB_PUBLIC_INCLUDE_DIR}/table_builder.h"
     "${LEVELDB_PUBLIC_INCLUDE_DIR}/table.h"
     "${LEVELDB_PUBLIC_INCLUDE_DIR}/write_batch.h"
+    "${LEVELDB_PUBLIC_INCLUDE_DIR}/log_writer.h"
+    "${LEVELDB_PUBLIC_INCLUDE_DIR}/log_reader.h"
+    "${LEVELDB_PUBLIC_INCLUDE_DIR}/log_format.h"
 )
 
 if (WIN32)
@@ -492,6 +492,9 @@ if(LEVELDB_INSTALL)
       "${LEVELDB_PUBLIC_INCLUDE_DIR}/table_builder.h"
       "${LEVELDB_PUBLIC_INCLUDE_DIR}/table.h"
       "${LEVELDB_PUBLIC_INCLUDE_DIR}/write_batch.h"
+      "${LEVELDB_PUBLIC_INCLUDE_DIR}/log_writer.h"
+      "${LEVELDB_PUBLIC_INCLUDE_DIR}/log_reader.h"
+      "${LEVELDB_PUBLIC_INCLUDE_DIR}/log_format.h"
     DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}/leveldb"
   )
 

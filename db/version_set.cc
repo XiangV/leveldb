@@ -8,8 +8,8 @@
 #include <cstdio>
 
 #include "db/filename.h"
-#include "db/log_reader.h"
-#include "db/log_writer.h"
+#include "leveldb/log_reader.h"
+#include "leveldb/log_writer.h"
 #include "db/memtable.h"
 #include "db/table_cache.h"
 #include "leveldb/env.h"
