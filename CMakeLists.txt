@@ -39,8 +39,11 @@ check_include_file("unistd.h" HAVE_UNISTD_H)
 
 include(CheckLibraryExists)
 
-find_library(CRC32C_LIB crc32)
-find_library(SNAPPY_LIB snappy)
+find_package(Crc32c REQUIRED)
+find_package(Snappy REQUIRED)
+
+message("crc32:${Crc32c_LIBRARIES} ${Crc32c_INCLUDE_DIRS} ${Crc32c_FOUND}")
+message("snappy:${Snappy_LIBRAIES} ${Snappy_INCLUDE_DIRS} ${Snappy_FOUND}")
 
 if (CRC32_LIB)
   set(HAVE_CRC32C)
@@ -279,10 +282,10 @@ if(HAVE_CLANG_THREAD_SAFETY)
 endif(HAVE_CLANG_THREAD_SAFETY)
 
 if(HAVE_CRC32C)
-  target_link_libraries(leveldb crc32c)
+  target_link_libraries(leveldb Crc32c::crc32c)
 endif(HAVE_CRC32C)
 if(HAVE_SNAPPY)
-  target_link_libraries(leveldb snappy)
+  target_link_libraries(leveldb Snappy::snappy)
 endif(HAVE_SNAPPY)
 if(HAVE_ZSTD)
   target_link_libraries(leveldb zstd)
