@@ -39,14 +39,14 @@ check_include_file("unistd.h" HAVE_UNISTD_H)
 
 include(CheckLibraryExists)
 
-find_library(CRC32C_LIB crc32)
-find_library(SNAPPY_LIB snappy)
+find_package(Crc32c REQUIRED)
+find_package(Snappy REQUIRED)
 
-if (CRC32_LIB)
+if (Crc32c_FOUND)
   set(HAVE_CRC32C)
 endif()
 
-if (SNAPPY_LIB)
+if (Snappy_FOUND)
   set(HAVE_SNAPPY)
 endif()
 
